@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">LedgerWise system overview</title>
+  <desc id="d">A Flutter app with a local Hive store, optional Firestore sync, native iOS billing and ATT bridges, native Android reminder workers, and monetisation services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1f20"/>
+      <stop offset="1" stop-color="#0e2a2b"/>
+    </linearGradient>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e6f6f5; }
+      .h { font-size: 26px; font-weight: 700; }
+      .k { font-size: 13px; fill: #7fc7c2; letter-spacing: 1.5px; font-weight: 700; }
+      .b { font-size: 16px; }
+      .s { font-size: 14px; fill: #a3d4d0; }
+      .app { fill: #11403f; stroke: #21b2ab; stroke-width: 2; }
+      .box { fill: #17524f; stroke: #2a8c86; stroke-width: 1.5; }
+      .nat { fill: #2a2a14; stroke: #b9c03a; stroke-width: 2; }
+      .db  { fill: #14283a; stroke: #3a8fd9; stroke-width: 2; }
+      .fb  { fill: #35300f; stroke: #e6c32f; stroke-width: 2; }
+      .arrow { stroke: #21b2ab; stroke-width: 2; fill: none; marker-end: url(#a); }
+      .arrow2 { stroke: #3a8fd9; stroke-width: 2; fill: none; marker-end: url(#a2); stroke-dasharray: 6 4; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#21b2ab"/></marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3a8fd9"/></marker>
+  </defs>
+  <rect width="1200" height="560" rx="16" fill="url(#bg)"/>
+  <text x="40" y="52" class="h">LedgerWise: system overview</text>
+  <text x="40" y="78" class="s">Conceptual view. Component names describe responsibilities, not production identifiers.</text>
+
+  <rect x="40" y="110" width="640" height="410" rx="12" class="app"/>
+  <text x="60" y="140" class="k">FLUTTER APP (iOS + ANDROID)</text>
+  <rect x="60" y="156" width="290" height="110" rx="8" class="box"/>
+  <text x="76" y="184" class="k">SCREENS</text>
+  <text x="76" y="208" class="b">Dashboard · Quick add · Analytics</text>
+  <text x="76" y="230" class="b">Transactions · Categories · Export</text>
+  <text x="76" y="252" class="s">Onboarding · Premium · Settings</text>
+  <rect x="370" y="156" width="290" height="110" rx="8" class="box"/>
+  <text x="386" y="184" class="k">APP STATE</text>
+  <text x="386" y="208" class="b">Provider-based, refreshed on</text>
+  <text x="386" y="230" class="b">sync and auth changes</text>
+  <rect x="60" y="282" width="290" height="110" rx="8" class="box"/>
+  <text x="76" y="310" class="k">STORAGE SERVICE</text>
+  <text x="76" y="334" class="b">Typed Hive boxes: expenses,</text>
+  <text x="76" y="356" class="b">categories, settings</text>
+  <text x="76" y="378" class="s">Defaults guaranteed after sync</text>
+  <rect x="370" y="282" width="290" height="110" rx="8" class="box"/>
+  <text x="386" y="310" class="k">SYNC SERVICE</text>
+  <text x="386" y="334" class="b">Initial merge + live listeners</text>
+  <text x="386" y="356" class="b">Firestore ↔ Hive cache</text>
+  <text x="386" y="378" class="s">Wipe on sign-out</text>
+  <rect x="60" y="408" width="600" height="96" rx="8" class="box"/>
+  <text x="76" y="436" class="k">SERVICES</text>
+  <text x="76" y="460" class="s">Billing · Premium · Ads gate + remote config · Reminders · Analytics sanitizer</text>
+  <text x="76" y="482" class="s">Auth · ATT · Updates · Connectivity · Crash context</text>
+
+  <rect x="740" y="110" width="420" height="110" rx="12" class="db"/>
+  <text x="760" y="140" class="k">ON-DEVICE</text>
+  <text x="760" y="168" class="b">Hive (local-first data)</text>
+  <text x="760" y="192" class="b">Preferences · CSV / PDF files</text>
+  <rect x="740" y="240" width="420" height="140" rx="12" class="nat"/>
+  <text x="760" y="270" class="k">NATIVE</text>
+  <text x="760" y="296" class="b">iOS (Swift): StoreKit billing, ATT</text>
+  <text x="760" y="320" class="b">Android (Kotlin): WorkManager reminders,</text>
+  <text x="760" y="342" class="b">notification channels, permission</text>
+  <text x="760" y="366" class="s">via platform channels</text>
+  <rect x="740" y="400" width="420" height="120" rx="12" class="fb"/>
+  <text x="760" y="430" class="k">FIREBASE</text>
+  <text x="760" y="456" class="b">Auth · Firestore (user-scoped)</text>
+  <text x="760" y="480" class="b">Analytics · Crashlytics · Performance</text>
+  <text x="760" y="504" class="b">Messaging</text>
+
+  <path d="M660 210 H740" class="arrow"/>
+  <path d="M660 320 H740" class="arrow"/>
+  <path d="M660 456 H740" class="arrow"/>
+  <path d="M740 440 C700 400 700 360 660 345" class="arrow2"/>
+</svg>
